@@ -3,6 +3,7 @@ package com.hospital.appointment.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,7 +37,9 @@ public class DoctorController {
 
     @PostMapping(value="/newRecord")
     public Doctor createDoctor(@RequestBody Doctor doctor) {
-        return doctorService.saveDoctor(doctor);
+    	System.out.println(doctor); 
+    	Doctor doctor2= doctorService.saveDoctor(doctor);
+    	return doctor2;
     }
 
     @DeleteMapping(value="Remove/{id}")

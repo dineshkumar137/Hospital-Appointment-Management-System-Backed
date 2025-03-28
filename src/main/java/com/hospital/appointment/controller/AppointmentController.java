@@ -21,22 +21,22 @@ public class AppointmentController {
     @Autowired
     private AppointmentService appointmentService;
 
-    @GetMapping
+    @GetMapping(value="/details")
     public List<Appointment> getAllAppointments() {
         return appointmentService.getAllAppointments();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping(value="getDetailsOf/{id}")
     public Appointment getAppointmentById(@PathVariable Long id) {
         return appointmentService.getAppointmentById(id);
     }
 
-    @PostMapping
+    @PostMapping(value="/newRecord")
     public Appointment createAppointment(@RequestBody Appointment appointment) {
         return appointmentService.saveAppointment(appointment);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping(value="Remove/{id}")
     public void deleteAppointment(@PathVariable Long id) {
         appointmentService.deleteAppointment(id);
     }
