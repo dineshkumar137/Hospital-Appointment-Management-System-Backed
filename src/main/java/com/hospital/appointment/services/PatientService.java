@@ -13,7 +13,7 @@ import com.hospital.appointment.repo.PatientRepository;
 public class PatientService {
 	 @Autowired
 	    private PatientRepository patientRepository;
-
+    //file change
 	    public List<Patient> getAllPatients() {
 	        return patientRepository.findAll();
 	    }
